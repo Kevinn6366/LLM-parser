@@ -13,12 +13,9 @@
  
   
 
->  # 创建环境
+ 创建环境
 >    python -m venv env
->    # 激活环境 (Windows)
->    .\env\Scripts\activate
->    # 激活环境 (Linux/macOS)
->    source env/bin/activate
+
 
 2.安装依赖
 
@@ -28,7 +25,6 @@
 3.配置环境变量:
 在项目根目录下创建一个 .env 文件（或直接在系统环境中设置），并填写你的 Dify 配置：
 
-Code snippet
 
 
 > DIFY_API_KEY=your_api_key_here

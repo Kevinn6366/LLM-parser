@@ -25,7 +25,7 @@
 
 2.安装依赖:
 
-Bash
+
 > pip install -r requirements.txt
 
 3.配置环境变量:
@@ -61,14 +61,3 @@ Code snippet
 > npm install
 > npm run dev
 
-
-
-
-- 项目结构
-app.py: Flask 后端入口，负责处理 API 请求与 Dify 交互。
-
-my-vue-app/: Vue 3 前端工程。
-
-DifyNode.png: Dify 编排参考图。
-
-Algorithm.png: 算法/逻辑流程参考图。

@@ -20,7 +20,7 @@
 >    # 激活环境 (Linux/macOS)
 >    source env/bin/activate
 
-2.安装依赖:
+2.安装依赖
 
 
 > pip install -r requirements.txt

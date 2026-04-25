@@ -6,8 +6,7 @@ app = Flask(__name__)
 # 允许前端跨域访问
 CORS(app)
 
-
-# Dify 密钥
+# Dify密钥,请在根目录的.env文件进行配置
 
 DIFY_API_KEY = os.getenv("DIFY_API_KEY")
 DIFY_URL =os.getenv("DIFY_URL")
@@ -25,14 +24,12 @@ def compile_cultural_resource():
         "Content-Type": "application/json",
         "User-Agent": "Lixin-Flask-Backend"
     }
-    
-    # 确保这里的 "test" 和你 Dify 里的变量名一致
+    # 确保这里的test和你 Dify里的变量名一致
     payload = {
         "inputs": {"test": user_query},
         "response_mode": "blocking",
         "user": "lixin_univ_user"
     }
-
     try:
         response = requests.post(DIFY_URL, headers=headers, json=payload, timeout=60)
         
@@ -41,8 +38,7 @@ def compile_cultural_resource():
             content = res_data['data']['outputs'].get('text', '未生成内容')
             return jsonify({"status": "success", "data": content})
         else:
-            return jsonify({"status": "error", "message": f"Dify接口异常: {response.status_code}"}), 500
-            
+            return jsonify({"status": "error", "message": f"Dify接口异常: {response.status_code}"}), 500       
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
